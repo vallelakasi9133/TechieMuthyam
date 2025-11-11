@@ -18,6 +18,7 @@
   margin-bottom: 40px;
   color: #2b3674;
   text-transform: uppercase;
+
 }
 
 /* Courses grid layout */
@@ -127,7 +128,11 @@
 
 @media (max-width: 480px) {
   .courses-title {
-    font-size: 1.8rem;
+    font-size: 1rem;
+        padding-top: 40px;
+        padding-left: 20px;
+        padding-right: 20px;
+        box-sizing: border-box;
   }
 
   .courses-grid {
