@@ -1,0 +1,19 @@
+<div class="jobs-container">
+  <h1 class="page-title">🚀 Career Roadmaps</h1>
+  <p class="subtitle">Explore different technical paths and the skills you need to master them.</p>
+
+  <div class="jobs-grid">
+    <div class="job-card" *ngFor="let job of jobRoadmaps">
+      <div class="icon">{{ job.icon }}</div>
+      <h2>{{ job.title }}</h2>
+      <p class="level">{{ job.level }}</p>
+      <p class="desc">{{ job.description }}</p>
+
+      <ul>
+        <li *ngFor="let skill of job.skills">{{ skill }}</li>
+      </ul>
+
+      <button class="explore-btn" (click)="exploreMore(job.title)">Explore More</button>
+    </div>
+  </div>
+</div>

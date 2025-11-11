@@ -1,0 +1,23 @@
+<header class="header" [class.menu-open]="isMenuOpen">
+  <div class="logo" (click)="navigativeHome()">
+    <img
+      src="https://res.cloudinary.com/kasi-ccbp-tech/image/upload/v1762418684/logo-1861420_640-removebg-preview_i1qfd1.png"
+      alt="Logo"
+    />
+    <span class="brand">Techie<span class="accent">Muthyam</span></span>
+  </div>
+
+  <!-- Hamburger -->
+  <button class="menu-toggle" (click)="toggleMenu()">
+    <span *ngIf="!isMenuOpen">☰</span>
+    <span *ngIf="isMenuOpen">✕</span>
+  </button>
+
+  <nav>
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">Home</a>
+    <a routerLink="/jobs" routerLinkActive="active" (click)="closeMenu()">RoadMap</a>
+    <a routerLink="/referrals" routerLinkActive="active" (click)="closeMenu()">Referrals</a>
+    <a routerLink="/company-portal" routerLinkActive="active" (click)="closeMenu()">Interview Prep</a>
+    <a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">Contact</a>
+  </nav>
+</header>

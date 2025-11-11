@@ -1,12 +1,28 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { Router, RouterOutlet } from '@angular/router';
+import { Header } from './components/header/header';
+import { Footer } from './components/footer/footer';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [RouterOutlet, Header, Footer],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrls: ['./app.scss']
 })
-export class App {
-  protected readonly title = signal('techiemuthyam');
+export class AppComponent {
+  constructor(private router: Router) {}
+ ngOnInit(): void {
+    // Type assertion: tell TypeScript these are PerformanceNavigationTiming entries
+    const navEntries = performance.getEntriesByType('navigation') as PerformanceNavigationTiming[];
+
+    if (navEntries.length > 0 && navEntries[0].type === 'reload') {
+      this.router.navigateByUrl('/');
+    }
+  }
+
+
 }
+
+// 👇 This is what Angular SSR expects
+export const App = AppComponent;
