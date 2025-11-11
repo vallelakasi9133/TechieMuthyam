@@ -1,0 +1,44 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+ background: linear-gradient(90deg, #00bcd4, #0097a7);
+  color: #000;
+  overflow: hidden;
+  z-index: 1000;
+  padding: 10px 0;
+}
+
+/* Outer container to hide overflow */
+.scroll-container {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Inner text with animation */
+.scroll-text {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scroll-text 20s linear infinite;
+  font-size: 1rem;
+  color: #000;
+}
+
+/* Animation that scrolls text left to right */
+@keyframes scroll-text {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .scroll-text {
+    font-size: 0.85rem;
+    animation-duration: 25s;
+  }
+}

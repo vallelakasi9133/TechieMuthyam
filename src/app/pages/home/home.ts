@@ -14,13 +14,12 @@ export class Home implements OnInit {
   companies = signal<any[]>([]);  // Signal for storing company data
   loading = signal<boolean>(true);  // Signal for loading state
   error = signal<string | null>(null);  // Signal for error state
-  iframeVisible = false;  // Signal for iframe visibility
-  iframeUrl: SafeResourceUrl | null = null;  // Stores the URL for the iframe
+
   
   constructor(private http: HttpClient, private sanitizer: DomSanitizer) {}
 
   ngOnInit() {
-    this.http.get<any>('http://techiemuthyam.in/api/getdata').subscribe({
+    this.http.get<any>('https://techiemuthyam.in/api/getdata').subscribe({
       next: (response) => {
         this.companies.set(response.companies || []);
         this.loading.set(false);
@@ -32,15 +31,4 @@ export class Home implements OnInit {
     });
   }
 
-  // Opens iframe with a URL
-  openIframe(url: string) {
-    this.iframeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(url);
-    this.iframeVisible = true;
-  }
-
-  // Closes iframe
-  closeIframe() {
-    this.iframeVisible = false;
-    this.iframeUrl = null;
-  }
 }

@@ -1,16 +1,31 @@
 <div class="page-container">
   <h1 class="page-title">Frontend Interview Questions</h1>
 
-  <div class="qa-container">
+  <!-- Loader -->
+     <div class="loading" *ngIf="loading">
+  <div class="spinner"></div>
+  <p>Loading questions...</p>
+</div>
+  
+  <!-- Error Message -->
+  <div *ngIf="error" class="error-message">{{ error }}</div>
+
+  <!-- Questions -->
+  <div *ngIf="!loading && !error" class="qa-container">
     <div *ngFor="let qa of questions; let i = index" class="qa-card">
       <div class="qa-header">
-        <div class="qa-number">Q{{ i + 1 }}.{{ qa.question }}</div>
+        <div class="qa-number">Q{{ i + 1 }}. {{ qa.question }}</div>
         <div class="qa-actions">
           <button class="btn-show" (click)="showAnswer(i)" [disabled]="qa.isViewed">
             {{ qa.isViewed ? 'Viewed' : 'Show Answer' }}
           </button>
 
-          <button *ngIf="qa.videoUrl" class="btn-video" (click)="openVideo(qa.videoUrl)">
+          <!-- Watch Video Button -->
+          <button
+            *ngIf="qa.videoUrl"
+            class="btn-video"
+            (click)="openVideo(qa.videoUrl)"
+          >
             🎥 Watch Video
           </button>
         </div>

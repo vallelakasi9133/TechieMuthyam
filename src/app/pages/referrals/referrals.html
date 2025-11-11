@@ -1,21 +1,29 @@
-<div class="construction-container">
-  <div class="bg-shapes">
-    <div class="circle one"></div>
-    <div class="circle two"></div>
-    <div class="circle three"></div>
+<div class="refer-container">
+  <p class="page-title">
+    Explore Top Companies and Apply Directly Through Their Careers Pages
+  </p>
+
+  <!-- Loader -->
+  <div class="loading" *ngIf="loading()">
+    <div class="spinner"></div>
+    <p>Loading Companies Data...</p>
   </div>
 
-  <div class="content">
-    <div class="icon">🚧</div>
-    <h1 class="title">
-      <span class="typing">This page is under construction...</span>
-    </h1>
-    <p class="subtitle">
-      We're crafting something <strong>amazing</strong> for you.  
-      Please check back soon 🚀
-    </p>
+  <!-- Error Message -->
+  <div class="error-message" *ngIf="error()">{{ error() }}</div>
 
-    <button class="notify-btn">Notify Me</button>
+  <!-- Company List -->
+  <div class="company-list" *ngIf="!loading() && !error()">
+    <div class="company-card" *ngFor="let company of companies()">
+      <h2 class="company-name">{{ company.name }}</h2>
+      <a
+        class="careers-link"
+        [href]="company.careersLink"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        View Careers
+      </a>
+    </div>
   </div>
 </div>
-

@@ -30,7 +30,7 @@ $accent-color: #ff4081;
 /* LEFT SIDE — Social Info */
 .contact-info {
   flex: 1 1 45%;
-  background: linear-gradient(135deg, $primary-color, $secondary-color);
+  background: linear-gradient(90deg, #00bcd4, #0097a7);
   color: white;
   border-radius: 10px;
   padding: 40px 30px;
@@ -103,7 +103,7 @@ $accent-color: #ff4081;
   flex: 1 1 50%;
   background-color: $card-bg;
   border-radius: 10px;
-  padding: 28px 40px;
+  padding: 55px 50px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 
@@ -156,7 +156,7 @@ $accent-color: #ff4081;
 
     &:hover {
       transform: translateY(-2px);
-      background: linear-gradient(135deg, $secondary-color, $primary-color);
+      background: linear-gradient(90deg, #00bcd4, #0097a7);
     }
   }
 }

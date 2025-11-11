@@ -13,10 +13,10 @@
 /* Title styling */
 .courses-title {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   font-weight: 700;
   margin-bottom: 40px;
-  color: #2b3674;
+  color: #0097a7;
   text-transform: uppercase;
 
 }
@@ -55,7 +55,7 @@
 .card-header {
   background-color: #f5f5f5;
   padding: 15px;
-  border-top: 5px solid #2575fc; /* Border on top */
+  border-top: 5px solid #000; /* Border on top */
   text-align: center;
   font-size: 1.4rem;
   font-weight: 600;
@@ -88,7 +88,7 @@
 .cta-btn {
   display: inline-block;
   padding: 10px 20px;
-  background: #2575fc;
+  background: linear-gradient(90deg, #00bcd4, #0097a7);
   color: #fff;
   border-radius: 25px;
   font-weight: 600;

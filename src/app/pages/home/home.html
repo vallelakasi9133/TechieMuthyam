@@ -10,7 +10,10 @@
   
 
   <!-- Loading spinner -->
-  <div class="loading" *ngIf="loading()">Loading companies...</div>
+  <div class="loading" *ngIf="loading()">
+  <div class="spinner"></div>
+  <p>Loading Jobs Data...</p>
+</div>
 
   <!-- Error message -->
   <div class="error" *ngIf="error()">{{ error() }}</div>

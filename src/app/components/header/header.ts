@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
   styleUrl: './header.scss',
 })
 export class Header {
+   constructor(private router: Router) {}
 isMenuOpen = false;
 
 toggleMenu() {
@@ -17,5 +18,10 @@ toggleMenu() {
 
 closeMenu() {
   this.isMenuOpen = false;
+}
+
+
+navigativeHome(){
+ this.router.navigate(['/']);
 }
 }
