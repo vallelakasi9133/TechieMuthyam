@@ -31,7 +31,6 @@ export class Referrals implements OnInit {
         this.loading.set(false);
       },
       error: (err) => {
-        console.error('Error fetching companies:', err);
         this.error.set('Failed to load data. Please try again later.');
         this.loading.set(false);
       },
