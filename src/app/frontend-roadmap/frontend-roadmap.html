@@ -1,0 +1,20 @@
+<div class="roadmap-container">
+  <h1 class="roadmap-title">Frontend Developer Roadmap</h1>
+
+  <div class="roadmap">
+    <div class="roadmap-stage" *ngFor="let stage of stages">
+      
+      <div class="stage-info">
+        <h2>{{ stage.name }}</h2>
+        <p>{{ stage.description }}</p>
+         <p>{{ stage.time }}</p>
+      </div>
+       <button class="delight-btn">Get Started</button>
+    </div>
+ 
+</div>
+</div>
+<div class="interview" (click)="navigateToInterviewPrePage()">
+<button class="delight-btn" >Interview Questions</button>
+</div>
+ 

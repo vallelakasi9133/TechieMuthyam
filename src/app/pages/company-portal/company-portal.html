@@ -1,0 +1,22 @@
+<!-- roadmap.component.html -->
+<div class="courses-container">
+  <h1 class="courses-title">Prepare for Your Tech Interviews</h1>
+
+  <!-- Grid of course cards -->
+  <div class="courses-grid">
+    <div *ngFor="let course of courses" class="course-card" [ngClass]="course.className">
+      <!-- Card Header with Top Border -->
+      <div class="card-header">
+        <h2>{{ course.title }}</h2>
+      </div>
+
+      <div class="card-body">
+        <p class="description">{{ course.description }}</p>
+
+        <!-- Action Button -->
+        <button (click)="onButtonClick(course.title)" class="cta-btn">{{ course.buttonText }}</button>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,36 @@
+<div class="home-container">
+    <div class="hero">
+    <h1 class="hero-title">
+      Discover Your <span class="accent">Next Opportunity</span>
+    </h1>
+    <p class="hero-subtitle">
+      Explore top openings and apply directly through trusted company links.
+    </p>
+  </div>
+  
+
+  <!-- Loading spinner -->
+  <div class="loading" *ngIf="loading()">Loading companies...</div>
+
+  <!-- Error message -->
+  <div class="error" *ngIf="error()">{{ error() }}</div>
+
+  <!-- Cards -->
+  <div class="card-grid" *ngIf="!loading() && !error()">
+    <div class="company-card" *ngFor="let c of companies()">
+      <div class="card-header">
+        <h3>{{ c.company_name }}</h3>
+        <p class="location"><i class="fa-solid fa-location-dot"></i> {{ c.location }}</p>
+      </div>
+
+      <p class="about">{{ c.about }}</p>
+
+      <ul class="meta">
+        <li><strong>Founded:</strong> {{ c.founded }}</li>
+        <li><strong>Email:</strong> {{ c.contact_email }}</li>
+      </ul>
+
+      <a [href]="c.apply_link" target="_blank" class="apply-btn">Apply Now</a>
+    </div>
+  </div>
+</div>

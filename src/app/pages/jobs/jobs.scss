@@ -1,0 +1,127 @@
+// Import font
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+.jobs-container {
+  padding: 50px 15px;
+  text-align: center;
+  // background: linear-gradient(135deg, #00bcd4, #006064);
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  color: #375de7;
+
+  .page-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .subtitle {
+    opacity: 0.9;
+    margin-bottom: 30px;
+    font-size: 1rem;
+  }
+
+  .jobs-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .job-card {
+    background: #fff;
+    color: #333;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: left;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    position: relative;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    }
+
+    .icon {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .level {
+      font-size: 0.9rem;
+      color: #00bcd4;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .desc {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        padding-left: 20px;
+        position: relative;
+        margin-bottom: 6px;
+        font-size: 0.9rem;
+
+        &::before {
+          content: '✔';
+          position: absolute;
+          left: 0;
+          color: #00bcd4;
+        }
+      }
+    }
+
+    .explore-btn {
+      background: #00bcd4;
+      color: #fff;
+      border: none;
+      border-radius: 25px;
+      padding: 8px 16px;
+      margin-top: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+
+      &:hover {
+        background: #007b8f;
+      }
+    }
+  }
+}
+
+/* ✅ Mobile adjustments */
+@media (max-width: 768px) {
+  .jobs-container {
+    .page-title {
+      font-size: 1.6rem;
+    }
+
+    .job-card {
+      text-align: center;
+      .desc {
+        font-size: 0.85rem;
+      }
+
+      ul {
+        text-align: left;
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+
