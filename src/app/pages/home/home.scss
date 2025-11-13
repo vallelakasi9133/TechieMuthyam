@@ -11,12 +11,13 @@
   text-align: center;
   max-width: 700px;
   margin: 0 auto 50px;
+  color: #444;
 }
 
 .hero-title {
   font-size: 2.6rem;
   font-weight: 700;
-  color: #111;
+  color: #0d47a1;
   margin-bottom: 12px;
 }
 
@@ -95,7 +96,7 @@
       margin-bottom: 12px;
 
       h3 {
-        color: #0d47a1;
+     
         margin: 0 0 5px;
         font-size: 1.3rem;
       }
@@ -150,4 +151,11 @@
     }
   }
 }
-
+.comp-name {
+  color: #0d47a1;;
+}
+@media (max-width: 600px) {
+ .hero-title{
+  font-size: 1.6rem !important;
+ }
+}

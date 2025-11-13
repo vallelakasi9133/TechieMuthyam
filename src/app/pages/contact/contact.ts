@@ -12,9 +12,9 @@ import { ReactiveFormsModule, FormBuilder, Validators, FormGroup } from '@angula
   styleUrls: ['./contact.scss']
 })
 export class Contact {
-  onSubmit() {
-    alert('Your message has been sent!');
-    // You can handle actual form submission here (e.g., send data to a backend or API)
-  }
+  // onSubmit() {
+  //   alert('Your message has been sent!');
+  //   // You can handle actual form submission here (e.g., send data to a backend or API)
+  // }
 }
 

@@ -48,6 +48,15 @@ export class CompanyPortal implements OnInit {
     if(course === "Frontend Development"){
      this.router.navigate(['/front-end-Interview&Anwsers']);
     }
+    else if(course === "Backend Development"){
+ this.router.navigate(['/backendq']);
+    }
+     else if(course === "DevOps"){
+ this.router.navigate(['/deveopsqa']);
+    }
+     else if(course === "Data Science"){
+ this.router.navigate(['datascienceqa']);
+    }
    
   }
 }

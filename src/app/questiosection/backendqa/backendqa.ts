@@ -5,17 +5,17 @@ import { catchError, finalize } from 'rxjs/operators';
 import { of } from 'rxjs';
 
 @Component({
-  selector: 'app-front-end-interview-qa',
+  selector: 'app-backendqa',
   standalone: true,
+  // ✅ Include HttpClientModule here since it's a standalone component
   imports: [CommonModule, HttpClientModule],
-  templateUrl: './front-end-interview-qa.html',
-  styleUrls: ['./front-end-interview-qa.scss'],
+  templateUrl: './backendqa.html',
+  styleUrls: ['./backendqa.scss'], // ✅ fixed property name
 })
-export class FrontEndInterviewQA implements OnInit {
+export class Backendqa implements OnInit {
   questions: any[] = [];
-  loading: boolean = false;
-  
-  error: string = '';
+  loading = false;
+  error = '';
 
   constructor(private http: HttpClient, private cdr: ChangeDetectorRef) {}
 
@@ -28,10 +28,9 @@ export class FrontEndInterviewQA implements OnInit {
     this.error = '';
 
     this.http
-      .get<{ questions: any[] }>('https://techiemuthyam.in/api/getquestion/frontend')
+      .get<{ questions: any[] }>('https://techiemuthyam.in/api/getquestion/backend')
       .pipe(
         catchError((err) => {
-          // console.error('API error', err);
           this.error = 'Failed to load questions. Please try again later.';
           return of({ questions: [] });
         }),
@@ -41,7 +40,7 @@ export class FrontEndInterviewQA implements OnInit {
         })
       )
       .subscribe((data) => {
-        this.questions = data.questions.map((q) => ({
+        this.questions = (data.questions || []).map((q) => ({
           ...q,
           isAnswerVisible: false,
           isViewed: false,

@@ -22,17 +22,13 @@
   <div class="card-grid" *ngIf="!loading() && !error()">
     <div class="company-card" *ngFor="let c of companies()">
       <div class="card-header">
-        <h3>{{ c.company_name }}</h3>
-        <p class="location"><i class="fa-solid fa-location-dot"></i> {{ c.location }}</p>
+        <h3><strong class="comp-name">{{ c.company_name }}</strong></h3>
+      
       </div>
-
-      <p class="about">{{ c.about }}</p>
-
-      <ul class="meta">
-        <li><strong>Founded:</strong> {{ c.founded }}</li>
-        <li><strong>Email:</strong> {{ c.contact_email }}</li>
-      </ul>
-
+  <p class="about"> <strong>Location: </strong>{{ c.location }}</p>
+      <p class="about"><strong>Role: </strong>{{ c.role }}</p>
+        <p class="about"><strong>Skills:</strong> {{ c.skills }}</p>
+        <p class="about"><strong>Info:</strong> {{ c.info }}</p>
       <a [href]="c.apply_link" target="_blank" class="apply-btn">Apply Now</a>
     </div>
   </div>

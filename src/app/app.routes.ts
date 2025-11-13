@@ -9,6 +9,9 @@ import { Contact } from './pages/contact/contact';
 import { Home } from './pages/home/home';
 import { FrontendRoadmap } from './frontend-roadmap/frontend-roadmap';
 import { FrontEndInterviewQA } from './front-end-interview-qa/front-end-interview-qa';
+import { Backendqa } from './questiosection/backendqa/backendqa';
+import { Devopsqa } from './questiosection/devopsqa/devopsqa';
+import { Datascienceqa } from './questiosection/datascienceqa/datascienceqa';
 
 export const routes: Routes = [
   { path: '', component: Home },
@@ -18,6 +21,9 @@ export const routes: Routes = [
   { path: 'contact', component: Contact },
   { path: 'front-endroadmap', component: FrontendRoadmap },
   { path: 'front-end-Interview&Anwsers', component: FrontEndInterviewQA },
+  { path: 'backendq', component: Backendqa },
+  { path: 'deveopsqa', component: Devopsqa },
+  { path: 'datascienceqa', component: Datascienceqa },
   { path: '**', redirectTo: '' },
 ];
 
