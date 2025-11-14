@@ -4,7 +4,7 @@
   .page-title {
     font-size: 28px;
     font-weight: 700;
-    color: #222;
+    color: #444;
     text-align: center;
   }
 }
@@ -80,9 +80,12 @@
   font-weight: 600;
   padding: 20px;
 }
-
 @media (max-width: 600px) {
   .page-title {
     font-size: 1.1rem !important;
+  }
+
+  .company-card {
+    width: 130px;
   }
 }

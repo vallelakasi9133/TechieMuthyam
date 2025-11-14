@@ -1,21 +1,20 @@
 import { CommonModule } from '@angular/common';
-import { Component, ChangeDetectorRef, OnInit } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { catchError, finalize } from 'rxjs/operators';
-import { of } from 'rxjs';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { catchError, finalize, of } from 'rxjs';
 
 @Component({
-  selector: 'app-front-end-interview-qa',
+  selector: 'app-datascienceqa',
   standalone: true,
+  // ✅ Include HttpClientModule because this is a standalone component
   imports: [CommonModule, HttpClientModule],
-  templateUrl: './front-end-interview-qa.html',
-  styleUrls: ['./front-end-interview-qa.scss'],
+  templateUrl: './datascienceqa.html',
+  styleUrls: ['./datascienceqa.scss'], // ✅ fixed typo (should be plural)
 })
-export class FrontEndInterviewQA implements OnInit {
+export class Datascienceqa implements OnInit {
   questions: any[] = [];
-  loading: boolean = false;
-  
-  error: string = '';
+  loading = false;
+  error = '';
 
   constructor(private http: HttpClient, private cdr: ChangeDetectorRef) {}
 
@@ -28,10 +27,9 @@ export class FrontEndInterviewQA implements OnInit {
     this.error = '';
 
     this.http
-      .get<{ questions: any[] }>('https://techiemuthyam.in/api/getquestion/frontend')
+      .get<{ questions: any[] }>('https://techiemuthyam.in/api/getquestion/datascience')
       .pipe(
         catchError((err) => {
-          // console.error('API error', err);
           this.error = 'Failed to load questions. Please try again later.';
           return of({ questions: [] });
         }),
@@ -41,7 +39,7 @@ export class FrontEndInterviewQA implements OnInit {
         })
       )
       .subscribe((data) => {
-        this.questions = data.questions.map((q) => ({
+        this.questions = (data.questions || []).map((q) => ({
           ...q,
           isAnswerVisible: false,
           isViewed: false,

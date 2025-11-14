@@ -5,7 +5,7 @@
       <h2 class="title">Get in Touch</h2>
       <p class="subtitle">
         Have a question, suggestion, or want to collaborate?  
-        Reach out via WhatsApp or Instagram — or register below.
+        Reach out via WhatsApp or Instagram.
       </p>
 
       <div class="social-links">
@@ -21,32 +21,6 @@
       </div>
     </div>
 
-    <!-- Right Section: Registration Form -->
-    <div class="contact-form">
-      <h3>Register with Us</h3>
-      <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
-        <div class="form-group">
-          <label for="name">Full Name</label>
-          <input type="text" id="name" name="name" ngModel required placeholder="Enter your name" />
-        </div>
-
-        <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" ngModel required placeholder="Enter your email" />
-        </div>
-
-        <div class="form-group">
-          <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone" ngModel placeholder="Enter your number" />
-        </div>
-
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" ngModel rows="4" placeholder="Write your message..."></textarea>
-        </div>
-
-        <button type="submit" class="submit-btn">Submit</button>
-      </form>
-    </div>
+  
   </div>
 </section>

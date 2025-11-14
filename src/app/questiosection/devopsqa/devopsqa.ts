@@ -1,17 +1,16 @@
 import { CommonModule } from '@angular/common';
-import { Component, ChangeDetectorRef, OnInit } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { catchError, finalize } from 'rxjs/operators';
-import { of } from 'rxjs';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { catchError, finalize, of } from 'rxjs';
 
 @Component({
-  selector: 'app-front-end-interview-qa',
+  selector: 'app-devopsqa',
   standalone: true,
   imports: [CommonModule, HttpClientModule],
-  templateUrl: './front-end-interview-qa.html',
-  styleUrls: ['./front-end-interview-qa.scss'],
+  templateUrl: './devopsqa.html',
+  styleUrl: './devopsqa.scss',
 })
-export class FrontEndInterviewQA implements OnInit {
+export class Devopsqa implements OnInit{
   questions: any[] = [];
   loading: boolean = false;
   
@@ -28,7 +27,7 @@ export class FrontEndInterviewQA implements OnInit {
     this.error = '';
 
     this.http
-      .get<{ questions: any[] }>('https://techiemuthyam.in/api/getquestion/frontend')
+      .get<{ questions: any[] }>('https://techiemuthyam.in/api/getquestion/devops')
       .pipe(
         catchError((err) => {
           // console.error('API error', err);
